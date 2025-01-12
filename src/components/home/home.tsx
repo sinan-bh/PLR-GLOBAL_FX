@@ -4,11 +4,9 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { About } from "../about/about";
-import { WhatsApp, Instagram } from "@mui/icons-material";
-import { AiOutlineDiscord } from "react-icons/ai";
-import { SlSocialYoutube } from "react-icons/sl";
-import Link from "next/link";
 import { Aim } from "../aim/aim";
+import FeaturesSection from "../features/features";
+import SocialMedia from "../ui/social-media";
 
 // Animation Variants for Heading
 const headingVariants = {
@@ -36,7 +34,7 @@ const taglineVariants = {
 };
 
 // Animation Variants for Social Icons
-const iconVariants = {
+export const iconVariants = {
   rest: { scale: 1 },
   hover: {
     scale: 1.2,
@@ -68,22 +66,22 @@ export const Hero: React.FC = () => {
   const taglineText = "Empowering Disciplined Trading for Financial Growth...";
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-screen">
       {/* Hero Section */}
-      <div className="sm:flex sm:flex-row flex-col justify-around py-36 sm:py-10 items-center w-full h-[100vh] sm:h-[95vh] px-4">
+      <div className="flex flex-col-reverse sm:flex-row justify-center items-center w-full min-h-screen px-4 sm:px-10 py-10">
         {/* Text and Social Links */}
         <motion.div
-          className="flex flex-col justify-around h-auto sm:h-[50vh] text-center sm:text-left items-center sm:items-start"
+          className="flex flex-col justify-center items-center sm:items-start text-center sm:text-left w-full sm:w-1/2 space-y-6"
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Title Section */}
           <div className="flex flex-col sm:flex-row items-center mb-6 sm:mb-0">
-            <Image src="/images/p.png" alt="logo" width={100} height={100} />
+            <Image src="/images/p.png" alt="logo" width={80} height={80} />
             <div className="sm:ml-4">
               {/* Animated Heading */}
-              <div className="max-w-2xl text-4xl sm:text-5xl font-bold flex">
+              <div className="max-w-2xl text-3xl sm:text-5xl font-bold flex flex-wrap justify-center sm:justify-start">
                 {headingText.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -99,7 +97,7 @@ export const Hero: React.FC = () => {
               </div>
               {/* Animated Tagline */}
               <motion.div
-                className="px-1 py-2 text-[12px] sm:text-[14px] text-slate-400"
+                className="px-1 py-2 text-sm sm:text-md text-gray-600"
                 variants={taglineVariants}
                 initial="hidden"
                 animate="visible"
@@ -111,84 +109,39 @@ export const Hero: React.FC = () => {
 
           {/* Social Media Links */}
           <div>
-            <div className="py-3 px-2 text-lg text-gray-700 font-semibold z-20 shadow-white text-shadow-lg">
+            <div className="py-2 px-2 text-md text-gray-700 font-semibold">
               Stay in Touch
             </div>
-            <div className="flex gap-5 justify-center sm:justify-start px-2">
-              <Link href={"https://wa.me/+919526083962"} passHref>
-                <motion.div
-                  className="cursor-pointer"
-                  variants={iconVariants}
-                  initial="rest"
-                  whileHover="hover"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <WhatsApp className="text-green-500" fontSize="large" />
-                </motion.div>
-              </Link>
-              <Link
-                href={
-                  "https://www.instagram.com/plrglobal.fx/profilecard/?igsh=djhwdGExdGh1YWh6"
-                }
-                passHref
-              >
-                <motion.div
-                  className="cursor-pointer"
-                  variants={iconVariants}
-                  initial="rest"
-                  whileHover="hover"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Instagram className="text-pink-500" fontSize="large" />
-                </motion.div>
-              </Link>
-              <Link href={""} passHref>
-                <motion.div
-                  className="cursor-pointer"
-                  variants={iconVariants}
-                  initial="rest"
-                  whileHover="hover"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <SlSocialYoutube size={40} className="text-red-500" />
-                </motion.div>
-              </Link>
-              <Link href={""} passHref>
-                <motion.div
-                  className="cursor-pointer"
-                  variants={iconVariants}
-                  initial="rest"
-                  whileHover="hover"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <AiOutlineDiscord size={40} className="text-blue-500" />
-                </motion.div>
-              </Link>
-            </div>
+            <SocialMedia className="flex gap-4 justify-center sm:justify-start" />
           </div>
         </motion.div>
 
         {/* Image Section */}
-        <motion.div
-          className="flex justify-center items-center mt-6 sm:mt-0"
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <Image
-            src="/images/BullBear.jpg"
-            alt="logo"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-lg w-full sm:w-[400px]"
-            style={{ objectFit: "cover" }}
-          />
-        </motion.div>
+        <div className="hidden sm:block">
+          <motion.div
+            className="flex justify-center items-center  mb-6 sm:mb-0"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Image
+              src="/images/BullBear.jpg"
+              alt="logo"
+              width={500}
+              height={400}
+              className="rounded-lg shadow-lg w-full max-w-[500px] h-auto"
+              style={{ objectFit: "cover" }}
+            />
+          </motion.div>
+        </div>
       </div>
 
       {/* Aim and About Sections */}
       <div className="w-full px-4">
         <Aim />
+      </div>
+      <div className="w-full px-4">
+        <FeaturesSection />
       </div>
       <div className="w-full px-4">
         <About />
