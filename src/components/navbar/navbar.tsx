@@ -15,7 +15,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="flex items-center justify-between p-4 shadow-md w-full fixed left-0 z-10 top-0">
+    <nav className="flex items-center justify-between p-4 shadow-md w-screen fixed left-0 z-10 top-0">
       {/* Logo Section with Animation */}
       <Link href="/">
         <motion.div

@@ -27,11 +27,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen justify-between`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex  items-center `}
       >
-        <div className="sticky top-0"><Navbar /></div>
-        <div>{children}</div>
-        <div><Footer /></div>
+        <div>
+          <div className="">
+            <Navbar />
+          </div>
+          <div>{children}</div>
+          <div>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
