@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[80vh] p-4">
+    <div className="flex flex-col items-center justify-center  min-h-screen sm:h-[85vh] p-4">
       <div className="flex flex-col sm:flex-row w-full items-center justify-around">
         {/* Content Section with Animation triggered when in view */}
         <motion.div

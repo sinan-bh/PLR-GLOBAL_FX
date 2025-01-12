@@ -11,7 +11,7 @@ export const Navbar = () => {
   const menuItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Features", href: "/features" },
   ];
 
   return (

@@ -25,18 +25,18 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-12 px-4  text-white">
+    <section className="w-full sm:h-[75vh] flex items-center justify-center py-12 px-4  text-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent ">
+        <h2 className="text-3xl md:text-4xl font-bold mt-10 sm:mt-0 sm:mb-8 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent ">
           Enhance Your Trading Journey
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-r from-blue-900 to-black  p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
+              className="bg-gradient-to-r from-blue-900 to-black p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 50 }}
-            //   animate={{ opacity: 1, y: 0 }}
+              //   animate={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1, delay: index * 0.5 }}
