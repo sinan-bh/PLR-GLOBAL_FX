@@ -36,7 +36,6 @@ const FeaturesSection = () => {
               key={index}
               className="bg-gradient-to-r from-blue-900 to-black p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
               initial={{ opacity: 0, y: 50 }}
-              //   animate={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1, delay: index * 0.5 }}
